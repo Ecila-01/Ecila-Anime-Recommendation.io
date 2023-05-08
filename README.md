@@ -1,1 +1,2 @@
-# Ecila-Anime-s-Recommendation.io
+# Ecila-Anime-Recommendation.io
+for school project only
