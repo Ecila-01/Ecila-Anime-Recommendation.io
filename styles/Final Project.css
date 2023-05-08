@@ -1,0 +1,474 @@
+/*Gallery Contents*/
+#anime1::before{
+    content:"Re:Zero";
+}
+#anime2::before{
+    content:"Clannad";
+}
+#anime3::before{
+    content:"Monogatari";
+}
+#anime4::before{
+    content:"Steins;Gate";
+}
+#anime5::before{
+    content:"Eighty-Six";
+}
+#anime6::before{
+    content:"Haruhi Suzumiya";
+}
+#anime7::before{
+    content:"Fate/Stay Night";
+}
+#anime8::before{
+    content:"Kara no Kyoukai";
+}
+#anime9::before{
+    content:"Shakugan no Shana";
+}
+#anime10::before{
+    content:"Oregairu";
+}
+#anime11::before{
+    content:"Bunny Girl-Senpai";
+}
+#anime12::before{
+    content:"Saekano";
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    background-color: black;
+}
+/*top nav content*/
+.navbar {
+    background-color: #DDDDDD;
+    width: 90%;
+    margin: 0 auto;
+    height: 60px;
+    display: flex;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px #D3D3D3;
+    overflow: hidden;
+    z-index: 2;
+    max-width: 2000px;
+}
+  
+.navbar a {
+    background-color: #DDDDDD;
+    float: left;
+    font-size: 16px;
+    color: #000000;;
+    text-align: center;
+    padding: 22px 50px;
+    text-decoration: none;
+    z-index: 2;
+}
+.container {
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+h1{
+    font-weight: normal;
+    font-size: 35px;
+    position: relative;
+    margin: 40px 0;
+    color: #FFFFFF;
+}
+p{
+    padding: 35px 300px;
+    font-weight: normal;
+    position: relative;
+    margin: 40px 0;
+    color: #FFFFFF;
+}
+#intro{
+    height: 500px;
+    position: relative;
+}
+h1::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: crimson;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: animate 4s linear infinite   ;
+}
+@keyframes animate{
+    0%{
+        width: 100px;
+    }
+    50%{
+        width: 200px;
+    }
+    100%{
+        width: 100px;
+    }
+}
+/*gallery, photos and buttons*/
+.gallery{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+}
+.pic{
+    position: relative;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px #D3D3D3;
+}
+.pic img{
+    border-radius: 10px;
+    height: 100%;
+    transition: .5s;
+}
+.pic::before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    width: 100%;
+    margin-top: -100px;
+    opacity: 0;
+    transition: .3s;
+    transition-delay: .2s;
+    z-index: 1;
+}
+.pic::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,.4);
+    transition: .3s;
+}
+.pic:hover::after{
+    height: 100%;
+}
+.pic:hover::before{
+    margin-top: 0;
+    opacity: 1;
+}
+.button {
+    width: 200px;
+    translate: center;
+    text-align: center;
+    border: 2px solid #ffffff;
+    border-radius: 20px/50px;
+    transition: 0.3s;
+    transition-delay: .2s;
+    opacity: 0;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    z-index: 2;
+}
+.button a{
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    z-index: 2;
+}
+.pic:hover .button {
+    opacity: 1;
+    background-color: 0;
+    z-index: 2;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 3;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+    z-index: 3;
+}
+.popup {
+    margin: 15px auto;
+    padding: 15px;
+    background: #D3D3D3;
+    border-radius: 5px;
+    width: 50%;
+    height: 94%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    z-index: 3;
+    overflow-y: auto;
+}
+.popup::-webkit-scrollbar {
+    display: none;
+  }
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+.popup .close:hover {
+    color: red;
+}
+.popup .content {
+    max-width: 100%;
+    overflow: auto;
+}
+@media screen and (max-width: 1000px){
+    .box{
+      width: 70%;
+    }
+    .popup{
+      width: 70%;
+    }
+} 
+
+.popup img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 350px;
+}
+.popup #title {
+    font-weight: normal;
+    font-size: 30px;
+    color: #333;
+    text-align: center;
+}
+.content h3{
+    color: #333;
+    text-align: center;
+    margin: auto;
+}
+.content p{
+    padding: 10px;
+    color: #333;
+    text-align: justify;
+    margin: auto;
+}
+.homepage {
+    text-align: center;
+    color: white;
+    z-index: 1;
+    position: absolute;
+    margin-left: 45%;
+}
+#myVideo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.7;
+    max-width: 2000px;
+    margin-inline: auto ;
+  }
+  
+.homebackground {
+    position: relative;
+    height: 100vh; 
+    margin-inline: auto;
+    max-width: 2000px;
+    width: 90%;
+}
+/*home overlay*/
+.hometext {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+    margin-right: 2000px;
+    flex-direction: column;
+    gap: 10px;
+}
+.homeintro{
+    display: flex;
+    padding-left: 27px;
+}
+.homeintro h3{
+    text-align: left;
+    font-weight:lighter;
+}
+.reg-sign-btn{
+    display: flex;
+    flex-direction: row;
+}
+.homebtns{
+    padding-bottom: 100px;
+    padding-top: 20px;
+    width: 180px;
+    text-align: center;
+    margin-inline: auto;
+}
+.homebtns a{
+    border: 2px solid #ffffff;
+    z-index: 2;
+    text-decoration: none;
+    color: white;
+    font-weight: lighter;
+    padding: 10px;
+    opacity: 2;
+    margin-bottom: 20px;
+    border-radius: 13px;
+}
+.homebtns p{
+    padding: 0;
+}
+
+/*Registration*/
+.registerBox{
+    width: 30%;
+    margin: 50px auto;
+    color: white;
+    background: #D3D3D3;
+    display: flex;
+}
+#register{
+    margin: 100px auto;
+    padding: 15px;
+    background: black;
+    border-radius: 5px;
+    width: 30%;
+    height: 50%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    z-index: 3;
+    opacity: 0.8;
+    background-color: #D3D3D3;
+    display: flex;
+}
+#register button{
+    background: white;
+    width: 100px;
+    display: block;
+    margin-inline: auto;
+    border: none;
+    outline: none;
+    height: 35px;
+    border-radius: 30px;
+    margin-top: 90px;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
+}
+.inputInfo{
+    padding: 40px 60px;
+    color: black;
+}
+#loginHeader{
+    padding-bottom: 50px;
+}
+.input-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px
+}
+.input-row .input-group{
+    flex-basis: 45%;
+}
+.input-row input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    padding-bottom: 5px;
+    background-color: #D3D3D3;
+}
+.pronouns{
+    display: flex;
+    margin: 25px;
+}
+#newspaper{
+   position: static;
+   display: flex;
+   flex-direction: row;
+   
+}
+#newspaper input{
+    width: 40%;
+    height: 40%;
+}
+#newspaper label{
+    margin-bottom: 0px;
+    margin-top: 10px;
+    margin-left: 5px;
+    padding-right: 0px;
+}
+.registerBox label{
+    margin-bottom: 6px;
+    display: block;
+    color: black;
+}
+.registerBox button{
+    background: white;
+    width: 100px;
+    display: block;
+    margin-inline: auto;
+    border: none;
+    outline: none;
+    height: 35px;
+    border-radius: 30px;
+    margin-top: 20px;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
+}
+.contactLeft h3{
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/*References*/
+.reference{
+    color: white;
+    display: flex;
+    font-size: larger;
+}
+.reference ul{
+    list-style: none;  
+}
+.reference li{
+    padding: 10px 60px;
+    margin-right: 100px;
+}
+.reference a{
+    text-decoration: none;
+    color: white;
+}
+.thanks{
+    display: flex;
+    flex-direction: column;
+}
+.thanks img{
+    width: 300px;
+    height: 170px;
+    position: static;
+    margin-inline: auto;
+    object-fit: cover;
+    opacity: .8;
+    border-radius: 10px;
+}
+

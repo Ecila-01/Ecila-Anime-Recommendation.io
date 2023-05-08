@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Sign Up/Sign In </title>
+        <meta name = "keywords" content = "finals, final project, reco website"/>
+        <meta name = "author" content = "Ecila" />
+        <link rel="stylesheet" type="text/css" href="../styles/Final Project.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class = "container">
+                <div class="navbar">
+                        <a href="../index.html">Home</a>
+                        <a href = "gallery.html"> Gallery</a>
+                        <a href="References.html">References</a>
+                        <b><a href="registration.html">Sign Up / Sign In</a></b>
+                </div>
+                <h1> Registration Form </h1>
+        </div>
+        <div class = "registerBox">
+                        <div class="inputInfo">
+                                <h3> Basic Information: </h3>
+                                <form action="#">
+                                        <div class="input-row">
+                                                <div class="input-group">
+                                                        <label>Username</label>
+                                                        <input type="text">
+                                                </div>
+                                                <div class="input-group">
+                                                        <label>Phone</label>
+                                                        <input type="text" >
+                                                </div>
+                                        </div>
+                                        <div class="input-row">
+                                                <div class="input-group">
+                                                        <label>Email</label>
+                                                        <input type="email">
+                                                </div>
+                                                <div class="input-group">
+                                                        <label>Password</label>
+                                                        <input type="password">
+                                                </div>
+                                        </div>
+                                        <div class="input-row">
+                                                <div class="input-group">
+                                                        <div class="pronouns">
+                                                                <input type="radio" name="gender" id="he">
+                                                                <label for="he">He/Him</label>
+                                                                <input type="radio" name="gender" id="she">
+                                                                <label for="she">She/Her</label>
+                                                                <input type="radio" name="gender" id="they">
+                                                                <label for="they">They/Them</label>      
+                                                            </div>
+                                                </div>
+                                                <div class="input-group" id ="newspaper">
+                                                                <label for="y/n"> Sign up for newspaper</label>
+                                                                <input type="checkbox" id="y/n" name="y/n" value="Yes">
+                                                </div>
+                                        </div>
+                                     
+                                        <button type = "submit">Register</button>
+                                </form>
+                        </div>
+                        
+        </div>  
+        <div class = "homebtns">     
+                <p>Already have an account?</p>       
+                <a href="#login"> Login Here </a>
+        </div>
+        <div id="login" class="overlay">
+            <div class="popup" id="register">
+                <a class="close" href="#">&times;</a>
+                <div class="inputInfo">
+                    <h3 id ="loginHeader"> Login Here: </h3>
+                    <form action="#">
+                        <div class="input-row" >
+                                <div class="input-group">
+                                        <label>Email</label>
+                                        <input type="email">
+                                </div>
+                                <div class="input-group">
+                                        <label>Password</label>
+                                        <input type="password">
+                                </div>
+                        </div>
+                        <button type = "submit">Login</button>
+                    </form>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>
